@@ -1,0 +1,52 @@
+<div class="modal-body">
+  <div class="d-flex justify-content-center border bg-light rounded small text-center mb-1 p-1">
+    <div class="mx-1 w-50">
+      <div>From</div>
+      <div>{{ formatDate(fromDate) }}</div>
+    </div>
+    <div class="mx-1 w-50">
+      <div>To</div>
+      <div>
+        {{ formatDate(toDate) }}
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column justify-content-center custom-date-time-picker">
+    <ngb-datepicker #datepicker [dayTemplate]="dayTemplate" (dateSelect)="dateSelected($event)" outsideDays="hidden">
+    </ngb-datepicker>
+    <ng-template #dayTemplate let-date>
+      <span class="day-template" [class.range]="isRange(date)" [class.faded]="isHovered(date) || isInside(date)">
+        {{ date.day }}
+      </span>
+    </ng-template>
+    <div class="d-flex mt-1">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="fromTime">
+            <i class="fa-solid fa-clock"></i>
+          </label>
+        </div>
+        <select class="form-control form-control-sm rounded-0" id="fromTime" [formControl]="fromTimeControl">
+          <option *ngFor="let time of timeOptions" [value]="time">{{ time }}</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select class="form-control form-control-sm rounded-0" id="toTime" [formControl]="toTimeControl">
+          <option *ngFor="let time of timeOptions" [value]="time">{{ time }}</option>
+        </select>
+        <div class="input-group-append">
+          <label class="input-group-text" for="toTime">
+            <i class="fa-solid fa-clock"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="error" class="alert alert-danger m-0 mt-1 small">
+    {{ error }}
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="dismiss()">Cancel</button>
+  <button type="button" ngbAutofocus class="btn btn-primary" (click)="confirm()">Confirm</button>
+</div>
