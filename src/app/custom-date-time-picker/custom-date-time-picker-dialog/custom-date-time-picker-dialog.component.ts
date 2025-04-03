@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { NgbActiveModal, NgbCalendar, NgbDate, NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbDate, NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   templateUrl: './custom-date-time-picker-dialog.component.html'
@@ -17,7 +17,6 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
 
   constructor(
     private _modal: NgbActiveModal,
-    private _calendar: NgbCalendar,
     public i18n: NgbDatepickerI18n
   ) {}
 
@@ -31,8 +30,6 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
     }
 
     if (!this.selectedDateTimeRange) {
-      this.fromDate = this._calendar.getToday();
-      this.toDate = this._calendar.getNext(this._calendar.getToday(), 'd', 2);
       this.fromTimeControl = new FormControl('09:00');
       this.toTimeControl = new FormControl('10:00');
       return;
@@ -54,6 +51,13 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
 
   dismiss() {
     this._modal.dismiss();
+  }
+
+  reset() {
+    this.fromDate = null;
+    this.toDate = null;
+    this.fromTimeControl.setValue('09:00');
+    this.toTimeControl.setValue('10:00');
   }
 
   confirm() {
@@ -86,9 +90,7 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
   dateSelected(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
-      this.toDate = date;
-    } else if (this.fromDate && this.toDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
+    } else if (this.fromDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
       this.toDate = date;
     } else {
       this.toDate = null;
