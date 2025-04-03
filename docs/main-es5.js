@@ -347,10 +347,11 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
 
       if (rf & 2) {
         var date_r6 = ctx.$implicit;
+        var currentMonth_r7 = ctx.currentMonth;
 
         var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("range", ctx_r2.isRange(date_r6))("faded", ctx_r2.isHovered(date_r6) || ctx_r2.isInside(date_r6));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("range", ctx_r2.isRange(date_r6))("faded", ctx_r2.isHovered(date_r6) || ctx_r2.isInside(date_r6))("outside", date_r6.month !== currentMonth_r7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -368,13 +369,13 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
       }
 
       if (rf & 2) {
-        var time_r7 = ctx.$implicit;
+        var time_r8 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r8);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r8);
       }
     }
 
@@ -388,13 +389,13 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
       }
 
       if (rf & 2) {
-        var time_r8 = ctx.$implicit;
+        var time_r9 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r9);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r9);
       }
     }
 
@@ -561,7 +562,7 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
       selectors: [["ng-component"]],
       decls: 36,
       vars: 8,
-      consts: [[1, "modal-body"], [1, "d-flex", "justify-content-center", "border", "bg-light", "rounded", "small", "text-center", "mb-1", "p-1"], [1, "mx-1", "w-50"], [1, "d-flex", "flex-column", "justify-content-center", "custom-date-time-picker"], ["outsideDays", "hidden", 3, "dayTemplate", "dateSelect"], ["datepicker", ""], ["dayTemplate", ""], [1, "d-flex", "mt-1"], [1, "input-group"], [1, "input-group-prepend"], ["for", "fromTime", 1, "input-group-text"], [1, "fa-solid", "fa-clock"], ["id", "fromTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "toTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [1, "input-group-append"], ["for", "toTime", 1, "input-group-text"], ["class", "alert alert-danger m-0 mt-1 small", 4, "ngIf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-outline-secondary", 3, "click"], ["type", "button", "ngbAutofocus", "", 1, "btn", "btn-primary", 3, "click"], [1, "day-template"], [3, "value"], [1, "alert", "alert-danger", "m-0", "mt-1", "small"]],
+      consts: [[1, "modal-body"], [1, "d-flex", "justify-content-center", "border", "bg-light", "rounded", "small", "text-center", "mb-1", "p-1"], [1, "mx-1", "w-50"], [1, "d-flex", "flex-column", "justify-content-center", "custom-date-time-picker"], [3, "dayTemplate", "dateSelect"], ["datepicker", ""], ["dayTemplate", ""], [1, "d-flex", "mt-1"], [1, "input-group"], [1, "input-group-prepend"], ["for", "fromTime", 1, "input-group-text"], [1, "fa-solid", "fa-clock"], ["id", "fromTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "toTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [1, "input-group-append"], ["for", "toTime", 1, "input-group-text"], ["class", "alert alert-danger m-0 mt-1 small", 4, "ngIf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-outline-secondary", 3, "click"], ["type", "button", "ngbAutofocus", "", 1, "btn", "btn-primary", 3, "click"], [1, "day-template"], [3, "value"], [1, "alert", "alert-danger", "m-0", "mt-1", "small"]],
       template: function CustomDateTimePickerDialogComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -612,7 +613,7 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CustomDateTimePickerDialogComponent_ng_template_15_Template, 2, 5, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CustomDateTimePickerDialogComponent_ng_template_15_Template, 2, 7, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 7);
 

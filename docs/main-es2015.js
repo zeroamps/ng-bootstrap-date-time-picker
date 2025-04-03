@@ -160,8 +160,9 @@ function CustomDateTimePickerDialogComponent_ng_template_15_Template(rf, ctx) { 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const date_r6 = ctx.$implicit;
+    const currentMonth_r7 = ctx.currentMonth;
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("range", ctx_r2.isRange(date_r6))("faded", ctx_r2.isHovered(date_r6) || ctx_r2.isInside(date_r6));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("range", ctx_r2.isRange(date_r6))("faded", ctx_r2.isHovered(date_r6) || ctx_r2.isInside(date_r6))("outside", date_r6.month !== currentMonth_r7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", date_r6.day, " ");
 } }
@@ -170,20 +171,20 @@ function CustomDateTimePickerDialogComponent_option_23_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const time_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r7);
+    const time_r8 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r8);
 } }
 function CustomDateTimePickerDialogComponent_option_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "option", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const time_r8 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r8);
+    const time_r9 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", time_r9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](time_r9);
 } }
 function CustomDateTimePickerDialogComponent_div_30_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 23);
@@ -285,7 +286,7 @@ class CustomDateTimePickerDialogComponent {
     }
 }
 CustomDateTimePickerDialogComponent.ɵfac = function CustomDateTimePickerDialogComponent_Factory(t) { return new (t || CustomDateTimePickerDialogComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbCalendar"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbDatepickerI18n"])); };
-CustomDateTimePickerDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CustomDateTimePickerDialogComponent, selectors: [["ng-component"]], decls: 36, vars: 8, consts: [[1, "modal-body"], [1, "d-flex", "justify-content-center", "border", "bg-light", "rounded", "small", "text-center", "mb-1", "p-1"], [1, "mx-1", "w-50"], [1, "d-flex", "flex-column", "justify-content-center", "custom-date-time-picker"], ["outsideDays", "hidden", 3, "dayTemplate", "dateSelect"], ["datepicker", ""], ["dayTemplate", ""], [1, "d-flex", "mt-1"], [1, "input-group"], [1, "input-group-prepend"], ["for", "fromTime", 1, "input-group-text"], [1, "fa-solid", "fa-clock"], ["id", "fromTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "toTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [1, "input-group-append"], ["for", "toTime", 1, "input-group-text"], ["class", "alert alert-danger m-0 mt-1 small", 4, "ngIf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-outline-secondary", 3, "click"], ["type", "button", "ngbAutofocus", "", 1, "btn", "btn-primary", 3, "click"], [1, "day-template"], [3, "value"], [1, "alert", "alert-danger", "m-0", "mt-1", "small"]], template: function CustomDateTimePickerDialogComponent_Template(rf, ctx) { if (rf & 1) {
+CustomDateTimePickerDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CustomDateTimePickerDialogComponent, selectors: [["ng-component"]], decls: 36, vars: 8, consts: [[1, "modal-body"], [1, "d-flex", "justify-content-center", "border", "bg-light", "rounded", "small", "text-center", "mb-1", "p-1"], [1, "mx-1", "w-50"], [1, "d-flex", "flex-column", "justify-content-center", "custom-date-time-picker"], [3, "dayTemplate", "dateSelect"], ["datepicker", ""], ["dayTemplate", ""], [1, "d-flex", "mt-1"], [1, "input-group"], [1, "input-group-prepend"], ["for", "fromTime", 1, "input-group-text"], [1, "fa-solid", "fa-clock"], ["id", "fromTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "toTime", 1, "form-control", "form-control-sm", "rounded-0", 3, "formControl"], [1, "input-group-append"], ["for", "toTime", 1, "input-group-text"], ["class", "alert alert-danger m-0 mt-1 small", 4, "ngIf"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-outline-secondary", 3, "click"], ["type", "button", "ngbAutofocus", "", 1, "btn", "btn-primary", 3, "click"], [1, "day-template"], [3, "value"], [1, "alert", "alert-danger", "m-0", "mt-1", "small"]], template: function CustomDateTimePickerDialogComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -309,7 +310,7 @@ CustomDateTimePickerDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "ngb-datepicker", 4, 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("dateSelect", function CustomDateTimePickerDialogComponent_Template_ngb_datepicker_dateSelect_13_listener($event) { return ctx.dateSelected($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CustomDateTimePickerDialogComponent_ng_template_15_Template, 2, 5, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, CustomDateTimePickerDialogComponent_ng_template_15_Template, 2, 7, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 9);

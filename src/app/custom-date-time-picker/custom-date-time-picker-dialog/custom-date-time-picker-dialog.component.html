@@ -12,10 +12,13 @@
     </div>
   </div>
   <div class="d-flex flex-column justify-content-center custom-date-time-picker">
-    <ngb-datepicker #datepicker [dayTemplate]="dayTemplate" (dateSelect)="dateSelected($event)" outsideDays="hidden">
-    </ngb-datepicker>
-    <ng-template #dayTemplate let-date>
-      <span class="day-template" [class.range]="isRange(date)" [class.faded]="isHovered(date) || isInside(date)">
+    <ngb-datepicker #datepicker [dayTemplate]="dayTemplate" (dateSelect)="dateSelected($event)"></ngb-datepicker>
+    <ng-template #dayTemplate let-date let-currentMonth="currentMonth">
+      <span
+        class="day-template"
+        [class.range]="isRange(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        [class.outside]="date.month !== currentMonth">
         {{ date.day }}
       </span>
     </ng-template>

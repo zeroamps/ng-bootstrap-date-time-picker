@@ -74,5 +74,9 @@ $primary: #e30613;
     .day-template.faded {
       background-color: lighten($primary, 25%);
     }
+
+    .day-template.outside {
+      @extend .text-muted;
+    }
   }
 }
