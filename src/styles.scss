@@ -65,8 +65,7 @@ $primary: #e30613;
       @extend .align-items-center;
     }
 
-    .day-template.range,
-    .day-template:hover {
+    .day-template.range {
       background-color: $primary;
       @extend .text-white;
     }

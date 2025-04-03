@@ -117,6 +117,10 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
     );
   }
 
+  isOutside(date: NgbDate, currentMonth: number) {
+    return date.month !== currentMonth && !(this.isRange(date) || this.isHovered(date) || this.isInside(date));
+  }
+
   formatDate(date: NgbDate | null) {
     if (!date) return '----';
     const { year, month, day } = date;
