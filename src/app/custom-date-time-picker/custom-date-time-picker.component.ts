@@ -12,6 +12,7 @@ export class CustomDateTimePickerComponent {
 
   constructor(private _modalService: NgbModal) {
     this.dateTimeRangeControl = new FormControl();
+    this.dateTimeRangeControl.markAsTouched();
   }
 
   select() {

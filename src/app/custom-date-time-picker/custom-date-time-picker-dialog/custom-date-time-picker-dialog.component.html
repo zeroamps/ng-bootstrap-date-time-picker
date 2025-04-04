@@ -12,7 +12,11 @@
     </div>
   </div>
   <div class="d-flex flex-column justify-content-center custom-date-time-picker">
-    <ngb-datepicker #datepicker [dayTemplate]="dayTemplate" (dateSelect)="dateSelected($event)"></ngb-datepicker>
+    <ngb-datepicker
+      #datepicker
+      [dayTemplate]="dayTemplate"
+      (dateSelect)="dateSelected($event)"
+      [minDate]="minDate"></ngb-datepicker>
     <ng-template #dayTemplate let-date let-currentMonth="currentMonth">
       <span
         class="day-template"

@@ -7,6 +7,7 @@
           class="form-control"
           placeholder="Select dates and times..."
           [formControl]="dateTimeRangeControl"
+          (click)="select()"
           readonly />
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" (click)="select()">

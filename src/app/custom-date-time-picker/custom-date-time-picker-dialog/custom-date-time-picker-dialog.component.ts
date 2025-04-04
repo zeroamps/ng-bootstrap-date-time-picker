@@ -8,6 +8,7 @@ import { NgbActiveModal, NgbDate, NgbDatepickerI18n } from '@ng-bootstrap/ng-boo
 export class CustomDateTimePickerDialogComponent implements OnInit {
   timeOptions: string[] = [];
   hoveredDate: NgbDate | null = null;
+  minDate: NgbDate;
   fromDate: NgbDate | null = null;
   toDate: NgbDate | null = null;
   fromTimeControl: FormControl;
@@ -28,6 +29,9 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
         this.timeOptions.push(`${formattedHour}:${formattedMinute}`);
       }
     }
+
+    const today = new Date();
+    this.minDate = new NgbDate(today.getFullYear(), today.getMonth() + 1, today.getDate());
 
     if (!this.selectedDateTimeRange) {
       this.fromTimeControl = new FormControl('09:00');
