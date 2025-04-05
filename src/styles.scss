@@ -77,5 +77,9 @@ $primary: #e30613;
     .day-template.outside {
       @extend .text-muted;
     }
+
+    .day-template.past {
+      color: #ddd !important;
+    }
   }
 }

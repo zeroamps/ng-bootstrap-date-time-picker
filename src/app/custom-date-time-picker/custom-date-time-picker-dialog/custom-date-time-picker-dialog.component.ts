@@ -125,6 +125,12 @@ export class CustomDateTimePickerDialogComponent implements OnInit {
     return date.month !== currentMonth && !(this.isRange(date) || this.isHovered(date) || this.isInside(date));
   }
 
+  isPast(date: NgbDate) {
+    const today = new Date();
+    const todayDate = new NgbDate(today.getFullYear(), today.getMonth() + 1, today.getDate());
+    return date.before(todayDate);
+  }
+
   formatDate(date: NgbDate | null) {
     if (!date) return '----';
     const { year, month, day } = date;

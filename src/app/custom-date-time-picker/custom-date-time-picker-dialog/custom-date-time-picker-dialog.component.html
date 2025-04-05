@@ -22,7 +22,8 @@
         class="day-template"
         [class.range]="isRange(date)"
         [class.faded]="isHovered(date) || isInside(date)"
-        [class.outside]="isOutside(date, currentMonth)">
+        [class.outside]="isOutside(date, currentMonth)"
+        [class.past]="isPast(date)">
         {{ date.day }}
       </span>
     </ng-template>
